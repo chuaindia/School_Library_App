@@ -1,4 +1,4 @@
-require './person'
+require './person_frame'
 
 class Student < Person
   def initialize(name, age, parent_permission, classroom)

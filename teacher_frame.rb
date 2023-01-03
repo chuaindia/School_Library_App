@@ -1,4 +1,4 @@
-require './person'
+require './person_frame'
 
 class Teacher < Person
   def initialize(name, age, parent_permission, specialization)
