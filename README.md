@@ -259,13 +259,13 @@ I would like to thank...
 
 > Add at least 2 questions new developers would ask when they decide to use your project.
 
-- **[Question_1]**
+- **[What is the main objective of this branch?]**
 
-  - [Answer_1]
+  - [Construction of different classes using RUBY]
 
-- **[Question_2]**
+- **[What is the symbol for class inheritance]**
 
-  - [Answer_2]
+  - ["<" sign. on the left hand side the derived class name will appear and the parent classname will be placed on the right hand side.]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
