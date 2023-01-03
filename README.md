@@ -61,7 +61,7 @@ After you're finished please remove all the comments and instructions!
 
 > Describe your project in 1 or 2 sentences.
 
-**[School_Library_App]** is a project which shows informations about the process of differents operations in a library 
+**[School_Library_App]** is a project which shows informations about the process of different operations in a school library 
 
 ## 🛠 Built With <a name="built-with"></a>
 
