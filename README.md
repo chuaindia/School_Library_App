@@ -57,7 +57,7 @@ After you're finished please remove all the comments and instructions!
 
 > Describe your project in 1 or 2 sentences.
 
-**[School_Library_App]** is a project which shows informations about the process of different operations in a school library. In this branch different Decorator classes are constructed. 
+**[School_Library_App]** is a project which shows informations about the process of different operations in a school library. In this branch different Decorator classes are constructed. New classes are created and association is established among them.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -92,9 +92,9 @@ After you're finished please remove all the comments and instructions!
 
 > Describe between 1-3 key features of the application.
 
-- **[BaseDecorator Class]**
-- **[CapitalizeDecorator Class]**
-- **[TrimmerDecorator Class]**
+- **[Book Class]**
+- **[Classroom Class]**
+- **[Rental Class]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
