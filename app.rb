@@ -120,11 +120,20 @@ class App
   end
 
   def list_of_rentals
-    puts 'What is the id of the person ?'
-    @people.each { |i| puts "id: #{i.id}, Person: #{i.name}" }
-    print 'ID of the person is: '
-    @rentals.each do |i|
-      puts "Date: #{i.date}, Book: '#{i.book.title}' by #{i.book.author}" if i.person.id.to_i == person.id.to_i
+    print 'ID of person: '
+    id = gets.chomp.to_i
+
+    puts 'Rentals: '
+
+    rentals = @rentals.select { |rental| rental.person.id == id }
+
+    if rentals.empty?
+      puts 'No rentals found'
+      return
+    end
+
+    rentals.each do |rental|
+      print "Date: #{rental.date}, Book: '#{rental.book.title}' by #{rental.book.author}\n"
     end
   end
 end
