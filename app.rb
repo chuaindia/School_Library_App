@@ -19,6 +19,8 @@ class App
     @books = []
 
     @people = []
+
+    @rentals = []
   end
 
   def display_list
@@ -112,12 +114,55 @@ class App
     puts 'Book Information entered successfully'
   end
 
+  def create_rental
+    if @books.empty?
+      puts 'No Book Record is available in the Library'
+    elsif @people.empty?
+      puts 'No Members Record is available in the Library'
+    else
+      puts 'Select a Book from the list by index'
+      @books.each_with_index do |book, index|
+        puts "#{index.to_i + 1} Book Title: #{book.title} Author: #{book.author}"
+      end
+      rental_book = gets.chomp.to_i - 1
+
+      puts 'Select a Person from the list by index'
+      @people.each_with_index do |person, index|
+        puts "#{index.to_i + 1} Name: #{person.name} Age: #{person.age} ID: #{person.id}"
+      end
+      rental_person = gets.chomp.to_i - 1
+
+      puts 'Enter the Date :'
+      date = gets.chomp
+      rental_detail = Rental.new(date, @books[rental_book], @people[rental_person])
+      @rentals << rental_detail
+      puts 'Rental created'
+    end
+  end
+
+  def list_of_rentals
+    print 'ID of person: '
+    id = gets.chomp.to_i
+
+    rentals = @rentals.select { |rental| rental.person.id == id }
+
+    if rentals.empty?
+      puts 'No person match that ID'
+    else
+      rentals.each do |rental|
+        print "Date: #{rental.date}, Book: '#{rental.book.title}' by #{rental.book.author}\n"
+      end
+    end
+  end
+
   def choose_options(option)
     case option
     when 1 then list_of_books
     when 2 then list_of_people
     when 3 then student_or_teacher
     when 4 then create_book
+    when 5 then create_rental
+    when 6 then list_of_rentals
     end
   end
 
@@ -137,46 +182,4 @@ class App
     choose_options_and_exit
     puts
   end
-
-  # def create_rental
-  #   if @books.empty?
-  #     puts 'No Book Record is available in the Library'
-  #   elsif @people.empty?
-  #     puts 'No Members Record is available in the Library'
-  #   else
-  #     puts 'Select a Book from the list by index'
-  #     @books.each_with_index do |book, index|
-  #       puts "#{index.to_i + 1} Book Title: #{book.title} Author: #{book.author}"
-  #     end
-  #     rental_book = gets.chomp.to_i - 1
-  #     puts 'Select a Person from the list by index'
-  #     @people.each_with_index do |person, index|
-  #       puts "#{index.to_i + 1} Name: #{person.name} Age: #{person.age} ID: #{person.id}"
-  #     end
-  #     rental_person = gets.chomp.to_i - 1
-  #     puts 'Enter the Date :'
-  #     date = gets.chomp
-  #     rental_detail = Rental.new(date, @books[rental_book], @people[rental_person])
-  #     @rentals.push(rental_detail)
-  #     puts 'Rental created'
-  #   end
-  # end
-
-  # def list_of_rentals
-  #   print 'ID of person: '
-  #   id = gets.chomp.to_i
-
-  #   puts 'Rentals: '
-
-  #   rentals = @rentals.select { |rental| rental.person.id == id }
-
-  #   if rentals.empty?
-  #     puts 'No rentals found'
-  #     return
-  #   end
-
-  #   rentals.each do |rental|
-  #     print "Date: #{rental.date}, Book: '#{rental.book.title}' by #{rental.book.author}\n"
-  #   end
-  # end
 end
