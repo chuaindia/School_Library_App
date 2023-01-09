@@ -138,8 +138,6 @@ class App
     puts
   end
 
-
-
   # def create_rental
   #   if @books.empty?
   #     puts 'No Book Record is available in the Library'
