@@ -99,11 +99,25 @@ class App
     puts 'Data for Teacher is entered successfully!!!'
   end
 
+  def create_book
+    print 'Title of the Book is: '
+    title = gets.chomp
+
+    print 'Author of the Book is: '
+    author = gets.chomp
+
+    book = Book.new(title, author)
+    @books << book
+
+    puts 'Book Information entered successfully'
+  end
+
   def choose_options(option)
     case option
     when 1 then list_of_books
     when 2 then list_of_people
     when 3 then student_or_teacher
+    when 4 then create_book
     end
   end
 
@@ -124,18 +138,7 @@ class App
     puts
   end
 
-  # def create_book
-  #   print 'Title of the Book is :'
-  #   title = gets.chomp
 
-  #   print 'Author of the Book is :'
-  #   author = gets.chomp
-
-  #   book = Book.new(title, author)
-  #   @books.push(book)
-
-  #   puts 'Book Information entered successfully'
-  # end
 
   # def create_rental
   #   if @books.empty?
