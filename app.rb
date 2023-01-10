@@ -4,7 +4,7 @@
 # require_relative './student'
 # require_relative './teacher'
 
-require './books_data'
+require './book_data'
 require './people_data'
 require './rentals_data'
 
