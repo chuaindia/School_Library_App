@@ -189,13 +189,24 @@ Example:
 
 > Mention all of the collaborators of this project.
 
+
+👤 **Olivier Kango**
+
+- [OlkGitHub:](https://github.com/Olivier-Kango)
+- [OlkTwitter:](https://twitter.com/olivierkango1)
+- [OlkLinkedIn:](https://www.linkedin.com/in/olivier-kango/)
+
+👤 **Daphineatim**
+
+- [QuinGitHub:](https://github.com/Daphineatim)
+- [QuinTwitter:](https://twitter.com/DhaPhyn)
+- [QuinLinkedIn:](https://www.linkedin.com/in/daphine-atim-27861422a/)
+
 👤 **Tanusri Ghosh**
 
-
-- GitHub: https://github.com/chuaindia)
-- Twitter: https://twitter.com/chuaghosh@
-- LinkedIn:https://linkedin.com/in/tanusrighosh
-
+- [GoshGitHub:](https://github.com/chuaindia)
+- [GoshTwitter:] https://twitter.com/chuaghosh@
+- [GoshLinkedIn:] https://linkedin.com/in/tanusrighosh
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -205,8 +216,9 @@ Example:
 
 > Describe 1 - 3 features you will add to the project.
 
-- [ ] **[Lending Book]**
-- [ ] **[New Book Insertion]**
+- [ ] **Refactor our code**
+- [ ] **preserve data**
+- [ ] **unit tests**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
