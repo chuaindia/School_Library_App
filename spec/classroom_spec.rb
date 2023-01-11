@@ -6,7 +6,7 @@ describe Classroom do
     before :each do
       @classroom = Classroom.new('class')
     end
-    
+
     it 'allots a new classroom' do
       expect(@classroom).to be_instance_of Classroom
     end
@@ -17,6 +17,4 @@ describe Classroom do
       expect(classroom.label).to eq 'class'
     end
   end
-end 
-
-        
+end
