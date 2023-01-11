@@ -9,7 +9,6 @@ class App
 
   attr_accessor :books, :people, :rentals
 
-
   def initialize
     @list = {
       '1' => 'List of All Books',
