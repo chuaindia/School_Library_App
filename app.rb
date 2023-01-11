@@ -1,6 +1,6 @@
-require './book_data'
 require './people_data'
 require './rentals_data'
+require './book_data'
 
 class App
   include BookData
