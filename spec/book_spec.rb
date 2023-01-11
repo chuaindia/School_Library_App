@@ -18,11 +18,9 @@ describe Book do
     end
   end  
   
-  bbbbb
-
   describe '#author' do
     it 'returns the correct author' do
-      @book.title.should eql 'Maxim Gorky'
+      @book.author.should eql 'Maxim Gorky'
     end
   end
 end     
