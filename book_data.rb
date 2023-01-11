@@ -4,7 +4,7 @@ require 'json'
 module BookData
   def list_of_books
     read_book_data
-  end    
+  end
 
   def create_book
     print 'Title of the Book is: '
@@ -18,34 +18,30 @@ module BookData
 
     save_book_data(book)
 
-    puts 'Book Information entered successfully'
+    puts 'Book Information entered successfully!!!'
   end
 
-  def save_book_data(book)
-    if File.exist?('./books.json')
+  def save_book_data(_book)
+    data = []
 
-      filedata = File.read('./books.json')
-      data = JSON.parse(filedata)
-      data << book
-      book_data_json = data.to_json
-
-      File.open('./books.json', 'w') do |file|
-        file.puts book_data_json
-      end
-
-    else
-      File.open('./books.json', 'w') do |file|
-        file.puts @books.to_json
-      end
+    @books.each do |book|
+      data << { title: book.title, author: book.author }
     end
+
+    File.write('books.json', data.to_json)
   end
 
   def read_book_data
     if File.exist?('./books.json')
       books = File.read('./books.json')
-      book_data = JSON.parse(books)
-      book_data.each do |book|
-        puts "Title: #{book['title']}, Author: #{book['author']}"
+
+      if books == ''
+        puts 'You need to Add books first !!!'
+      else
+        book_data = JSON.parse(books)
+        book_data.each do |book|
+          puts "Title: #{book['title']}, Author: #{book['author']}"
+        end
       end
     else
       puts 'Books are not available'

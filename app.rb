@@ -1,19 +1,13 @@
-# require_relative './book'
-# require_relative './person'
-# require_relative './rental'
-# require_relative './student'
-# require_relative './teacher'
-
 require './book_data'
 require './people_data'
 require './rentals_data'
 
 class App
-include BookData
-include PeopleData
-include RentalData
+  include BookData
+  include PeopleData
+  include RentalData
 
-attr_accessor :books, :people, :rentals
+  attr_accessor :books, :people, :rentals
 
 
   def initialize
@@ -56,6 +50,7 @@ attr_accessor :books, :people, :rentals
 
     if option == 7
       puts 'Please come again to visit the Library'
+      puts
       exit
     else
       choose_options(option)

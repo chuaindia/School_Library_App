@@ -6,7 +6,7 @@ module PeopleData
   def list_of_people
     read_people_data
   end
-  
+
   def student_or_teacher
     print 'Are you a student (s) or teacher (t) ? [Put s/t for you]: '
     input = gets.chomp.downcase
@@ -61,32 +61,30 @@ module PeopleData
     puts 'Data for Teacher is entered successfully!!!'
   end
 
-  def save_people_data(person)
-    if File.exist?('people.json')
-      people_data = File.read('people.json')
-      data = JSON.parse(people_data)
-      data << person
-      people_data_json = data.to_json
-      File.open('people.json', 'w') do |file|
-        file.puts(people_data_json)
-      end
-    else
-      File.open('people.json', 'w') do |file|
-        data = @people.to_json
-        file.puts(data)
-      end
+  def save_people_data(_person)
+    data = []
+
+    @people.each do |person|
+      data << { type: person.class, name: person.name, id: person.id, age: person.age }
     end
+
+    File.write('people.json', data.to_json)
   end
 
   def read_people_data
     if File.exist?('people.json')
       people = File.read('people.json')
-      people_data = JSON.parse(people)
-      people_data.each do |sot|
-        puts "[#{sot['type']}] Name: #{sot['name']}, ID: #{sot['id']}, Age: #{sot['age']}"
+
+      if people == ''
+        puts 'You need to Add people first !!!'
+      else
+        people_data = JSON.parse(people)
+        people_data.each do |sot|
+          puts "[#{sot['type']}] Name: #{sot['name']}, ID: #{sot['id']}, Age: #{sot['age']}"
+        end
       end
     else
       puts 'No Students or Teachers are not available in Database'
     end
-  end         
+  end
 end
